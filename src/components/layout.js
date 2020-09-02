@@ -7,39 +7,30 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import SEO from "../components/seo"
 
 import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <SEO title="Meghna Contoor" />
+      <Header />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: "calc(100% - 131px)",
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
+      <footer>
+        <div style={{ textAlign: "center" }}>
+          <div>placeholder for icons</div>© {new Date().getFullYear()}
+        </div>
+      </footer>
     </>
   )
 }
