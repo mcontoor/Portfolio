@@ -45,11 +45,27 @@ header {
     background-color: #95d3ff;
 }
 
-main {
+.main {
     margin: 0 auto;
     max-width: 1200px;
     min-height: calc(100vh - 12rem);
     padding: 0 1.0875rem 1.45rem;
+}
+
+.profile-img-container {
+    margin: 1.45rem;
+    height: 15.625rem;
+    width: 15.625rem;
+    border: 1px solid #000;
+    border-radius: 15.625rem;
+    overflow: hidden;
+}
+
+.home {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .dark-mode-toggle {

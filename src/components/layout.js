@@ -17,9 +17,7 @@ const Layout = ({ children }) => {
         <>
             <SEO title="Meghna Contoor" />
             <Header />
-            <div className="main">
-                <main>{children}</main>
-            </div>
+            <main className="main">{children}</main>
             <footer>
                 <div style={{ textAlign: 'center' }}>
                     <div>
