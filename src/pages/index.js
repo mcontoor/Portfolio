@@ -1,35 +1,61 @@
 import React from 'react';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-const IndexPage = () => (
-    <Layout>
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-            }}
-        >
+const IndexPage = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            placeholderImage: file(
+                relativePath: { eq: "gatsby-astronaut.png" }
+            ) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `);
+    return (
+        <Layout>
             <div
                 style={{
-                    maxWidth: `300px`,
-                    marginBottom: `1.45rem`,
-                    height: '200px',
-                    width: '100px',
-                    border: '1px solid #000  ',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
                 }}
             >
-                <Image />
+                <div
+                    style={{
+                        marginBottom: `1.45rem`,
+                        height: '15.625rem',
+                        width: '15.625rem',
+                        border: '1px solid #000  ',
+                        borderRadius: '15.625rem',
+                        overflow: `hidden`,
+                    }}
+                >
+                    <Img
+                        style={{
+                            // maxHeight: '15.625rem',
+                            // maxWidth: '15.625rem',
+                            // height: 'auto',
+                            // width: 'auto',
+                            margin:0
+                        }}
+                        fluid={data.placeholderImage.childImageSharp.fluid}
+                    />
+                </div>
+                <div>
+                    <h1>Meghna Contoor</h1>
+                    <p>Full Stack Developer</p>
+                    <p>Now go build something great.</p>
+                </div>
             </div>
-            <div>
-                <h1>Meghna Contoor</h1>
-                <p>Full Stack Developer</p>
-                <p>Now go build something great.</p>
-            </div>
-        </div>
-    </Layout>
-);
+        </Layout>
+    );
+};
 
 export default IndexPage;

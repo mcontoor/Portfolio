@@ -24,8 +24,14 @@ const Header = () => (
                 justifyContent: 'space-between',
             }}
         >
-            <div style={{ margin: 10 }}>Meghna</div>
-            <div style={{ display: 'flex' }}>
+            <h1 style={{ margin: 10 }}>MC</h1>
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
                 {options.map(option => (
                     <span style={{ margin: 10 }}>
                         <Link to={option.path}>{option.name}</Link>
