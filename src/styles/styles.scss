@@ -18,9 +18,11 @@ body.light-mode {
 body.dark-mode {
     background-color: #1a1919;
     color: #999;
+    transition: background-color 0.3s ease;
 
     header {
         background-color: #1b2938;
+        transition: background-color 0.3s ease;
     }
 
     .dark-mode-toggle > button {
@@ -43,6 +45,7 @@ body.dark-mode {
 
 header {
     background-color: #95d3ff;
+    transition: background-color 0.3s ease;
 }
 
 .main {
@@ -164,7 +167,9 @@ template {
 }
 a {
     background-color: transparent;
-    -webkit-text-decoration-skip: objects;
+    // -webkit-text-decoration-skip: objects;
+    // border: 0 0;
+    text-decoration: none;
 }
 a:active,
 a:hover {
@@ -185,6 +190,10 @@ dfn {
 }
 h1 {
     font-size: 2em;
+    margin: 0.67em 0;
+}
+h2 {
+    font-size: 1em;
     margin: 0.67em 0;
 }
 mark {

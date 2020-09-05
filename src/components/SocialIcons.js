@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    Codepen,
     Twitter,
     Linkedin,
     GitHub,

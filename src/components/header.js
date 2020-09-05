@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import DarkModeToggle from './DarkModeToggle';
 
@@ -19,7 +18,7 @@ const Header = () => (
             style={{
                 margin: `0 auto`,
                 maxWidth: 1200,
-                padding: `1.45rem 1.0875rem`,
+                padding: `0.2rem 1.0875rem`,
                 display: 'flex',
                 justifyContent: 'space-between',
             }}
@@ -33,9 +32,9 @@ const Header = () => (
                 }}
             >
                 {options.map(option => (
-                    <span style={{ margin: 10 }}>
-                        <Link to={option.path}>{option.name}</Link>
-                    </span>
+                    <a style={{ margin: 10 }} href={option.path}>
+                        <p style={{margin: 0}}>{option.name}</p>
+                    </a>
                 ))}
                 <span style={{ margin: 10 }}>
                     <DarkModeToggle />
