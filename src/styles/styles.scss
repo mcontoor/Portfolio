@@ -29,10 +29,26 @@ body.dark-mode {
             color: lightblue;
         }
     }
+
+    .social-links svg {
+        stroke: #fff;
+    }
+
+    .social-links svg:hover {
+        width: 30px;
+        height: 30px;
+        stroke: #95d3ff;
+    }
 }
 
 header {
     background-color: #95d3ff;
+}
+
+main {
+    margin: 0 auto;
+    min-height: calc(100% - 131px);
+    padding: 0 1.0875rem 1.45rem;
 }
 
 .dark-mode-toggle {
@@ -71,6 +87,31 @@ header {
     100% {
         transform: translateY(0px);
     }
+}
+
+.social-links {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links svg {
+    width: 24px;
+    height: 24px;
+    margin: 0 1.5rem 0 0;
+    stroke-width: 1.5px;
+    stroke: #1a181b;
+}
+
+.social-links svg:hover {
+    width: 30px;
+    height: 30px;
+    stroke: #95d3ff;
+}
+
+.heart {
+    color: #5e1b14;
 }
 
 article,
