@@ -1,20 +1,22 @@
 import React from 'react';
 import useDarkMode from 'use-dark-mode';
-
-import Toggle from './Toggle';
+import Day from '../assets/day.svg';
+import Night from '../assets/night.svg';
 
 const DarkModeToggle = () => {
     const darkMode = useDarkMode(false);
-
+    console.log(darkMode);
     return (
         <div className="dark-mode-toggle">
-            <button type="button" onClick={darkMode.disable}>
-                ☀
-            </button>
-            <Toggle checked={darkMode.value} onChange={darkMode.toggle} />
-            <button type="button" onClick={darkMode.enable}>
-                ☾
-            </button>
+            {darkMode.value ? (
+                <button type="button" onClick={darkMode.toggle}>
+                    <Night className="toggle-control" />
+                </button>
+            ) : (
+                <button type="button" onClick={darkMode.toggle}>
+                    <Day className="toggle-control" />
+                </button>
+            )}
         </div>
     );
 };

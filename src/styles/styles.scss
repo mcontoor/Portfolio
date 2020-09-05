@@ -55,48 +55,24 @@ header {
     }
 }
 
-.toggle-control {
-    position: relative;
-    padding: 0 4px;
-    display: flex;
-    align-items: center;
+.toggle-control path {
+    animation: down 1s ease;
 }
 
-input[type='checkbox'].dmcheck {
-    width: 40px;
-    height: 10px;
-    background: #555;
-    position: relative;
-    border-radius: 5px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    vertical-align: 2px;
-    outline: none;
-
-    &:checked + label {
-        left: 30px;
+@keyframes down {
+    to {
+        fill: #f9d100;
     }
 
-    &:focus-visible {
-        outline: solid 2px white;
+    0% {
+        transform: translateY(20px);
     }
 
-    & + label {
-        display: inline-block;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        position: absolute;
-        left: 2px;
-        background: #fff;
-        opacity: 0.9;
-        background-color: #f6f6f6;
+    100% {
+        transform: translateY(0px);
     }
 }
+
 article,
 aside,
 details,
