@@ -1,18 +1,17 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from "gatsby";
+import React from "react";
+import DarkModeToggle from "./DarkModeToggle";
 
 const options = [
   { name: "About", path: "/" },
   { name: "Portfolio", path: "/portfolio" },
   { name: "Resume", path: "/resume" },
   { name: "Contact", path: "/contact" },
-]
+];
 
 const Header = () => (
   <header
     style={{
-      background: `#fff`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -32,9 +31,12 @@ const Header = () => (
             <Link to={option.path}>{option.name}</Link>
           </span>
         ))}
+        <span style={{ margin: 10 }}>
+          <DarkModeToggle />
+        </span>
       </div>
     </div>
   </header>
-)
+);
 
-export default Header
+export default Header;
