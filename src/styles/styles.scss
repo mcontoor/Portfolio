@@ -47,7 +47,8 @@ header {
 
 main {
     margin: 0 auto;
-    min-height: calc(100% - 131px);
+    max-width: 1200px;
+    min-height: calc(100vh - 12rem);
     padding: 0 1.0875rem 1.45rem;
 }
 
