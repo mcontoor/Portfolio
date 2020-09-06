@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DarkModeToggle from './DarkModeToggle';
 
 const options = [
@@ -8,40 +8,38 @@ const options = [
     { name: 'Contact', path: '/contact' },
 ];
 
-const Header = () => (
-    <header
-        style={{
-            marginBottom: `1.45rem`,
-        }}
-    >
-        <div
+const Header = () => {
+    const [showMenu, togglenavmenuState] = useState(false);
+    return (
+        <header
             style={{
-                margin: `0 auto`,
-                maxWidth: 1200,
-                padding: `0.2rem 1.0875rem`,
-                display: 'flex',
-                justifyContent: 'space-between',
+                marginBottom: `1.45rem`,
             }}
         >
-            <h1 style={{ margin: 10 }}>MC</h1>
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}
-            >
-                {options.map(option => (
-                    <a style={{ margin: 10 }} href={option.path}>
-                        <p style={{ margin: 0 }}>{option.name}</p>
-                    </a>
-                ))}
-                <span style={{ margin: 10 }}>
-                    <DarkModeToggle />
-                </span>
+            <div className="header-items">
+                <button
+                    className={`hamburger-menu ${showMenu ? 'open' : ''}`}
+                    onClick={() => togglenavmenuState(!showMenu)}
+                >
+                    <div></div>
+                </button>
+
+                <h1 className="title">MC</h1>
+                <div className="nav">
+                    <div className={`menu ${showMenu ? 'menu-open' : ''}`}>
+                        {options.map(option => (
+                            <a className="nav-options" href={option.path}>
+                                <p style={{ margin: 0 }}>{option.name}</p>
+                            </a>
+                        ))}
+                    </div>
+                    <span className="toggle">
+                        <DarkModeToggle />
+                    </span>
+                </div>
             </div>
-        </div>
-    </header>
-);
+        </header>
+    );
+};
 
 export default Header;
