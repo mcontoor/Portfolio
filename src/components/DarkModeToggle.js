@@ -5,7 +5,6 @@ import Night from '../assets/night.svg';
 
 const DarkModeToggle = () => {
     const darkMode = useDarkMode(false);
-    console.log(darkMode);
     return (
         <div className="dark-mode-toggle">
             {darkMode.value ? (

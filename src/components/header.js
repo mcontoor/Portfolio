@@ -2,9 +2,9 @@ import React from 'react';
 import DarkModeToggle from './DarkModeToggle';
 
 const options = [
-    { name: 'About', path: '/' },
-    { name: 'Portfolio', path: '/portfolio' },
+    { name: 'Home', path: '/' },
     { name: 'Resume', path: '/resume' },
+    { name: 'Portfolio', path: '/portfolio' },
     { name: 'Contact', path: '/contact' },
 ];
 
@@ -33,7 +33,7 @@ const Header = () => (
             >
                 {options.map(option => (
                     <a style={{ margin: 10 }} href={option.path}>
-                        <p style={{margin: 0}}>{option.name}</p>
+                        <p style={{ margin: 0 }}>{option.name}</p>
                     </a>
                 ))}
                 <span style={{ margin: 10 }}>
