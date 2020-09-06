@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import DarkModeToggle from './DarkModeToggle';
+import { Home, Archive, Clipboard, User } from 'react-feather';
 
 const options = [
-    { name: 'Home', path: '/' },
-    { name: 'Resume', path: '/resume' },
-    { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', path: '/', icon: <Home size={18} /> },
+    { name: 'Resume', path: '/', icon: <Clipboard size={18} /> },
+    { name: 'Portfolio', path: '/', icon: <Archive size={18} /> },
+    { name: 'Contact', path: '/', icon: <User size={18} /> },
 ];
 
 const Header = () => {
@@ -29,7 +30,10 @@ const Header = () => {
                     <div className={`menu ${showMenu ? 'menu-open' : ''}`}>
                         {options.map(option => (
                             <a className="nav-options" href={option.path}>
-                                <p style={{ margin: 0 }}>{option.name}</p>
+                                {option.icon}{' '}
+                                <p style={{ margin: 0, paddingInlineStart: 5 }}>
+                                    {option.name}
+                                </p>
                             </a>
                         ))}
                     </div>
