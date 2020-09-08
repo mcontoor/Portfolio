@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
             <Header />
             <main className="main">{children}</main>
             <footer>
-                <div style={{ textAlign: 'center' }}>
+                <div className="footer">
                     <div>
                         <SocialIcons />
                     </div>

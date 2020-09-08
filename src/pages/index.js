@@ -24,8 +24,13 @@ const IndexPage = () => {
                 </div>
                 <div>
                     <h1>Meghna Contoor</h1>
-                    <p>Full Stack Developer</p>
-                    <p>Now go build something great.</p>
+                    <p className="home-title">FULL STACK DEVELOPER</p>
+                    <p className="home-info">
+                        Hi, I'm a full stack developer based in India. I mainly
+                        work with Javascript/Node.js and other JS frameworks.
+                        I'm passionate about writing code that solves problems
+                        and contributing to open source.
+                    </p>
                 </div>
             </div>
         </Layout>
