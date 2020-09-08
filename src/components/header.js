@@ -6,7 +6,7 @@ const options = [
     { name: 'Home', path: '/', icon: <Home size={18} /> },
     { name: 'Resume', path: '/resume', icon: <Clipboard size={18} /> },
     { name: 'Portfolio', path: '/', icon: <Archive size={18} /> },
-    { name: 'Contact', path: '/', icon: <User size={18} /> },
+    { name: 'Contact', path: '/contact', icon: <User size={18} /> },
 ];
 
 const Header = () => {

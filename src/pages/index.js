@@ -18,7 +18,7 @@ const IndexPage = () => {
     `);
     return (
         <Layout>
-            <div className="home">
+            <div className="container home">
                 <div className="profile-img-container">
                     <Img fluid={data.placeholderImage.childImageSharp.fluid} />
                 </div>
