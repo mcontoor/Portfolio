@@ -80,7 +80,14 @@ header {
 }
 
 .home {
-    height: 60vh;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .container {
@@ -190,8 +197,10 @@ header {
 }
 
 .home-info {
+    min-width: 280px;
     width: 320px;
     text-align: justify;
+    padding: 10px;
 }
 
 article,
@@ -922,5 +931,7 @@ pre tt:after {
     .home {
         display: flex;
         flex-direction: column;
+        -ms-transform: translateY(0);
+        transform: translateY(0);
     }
 }
