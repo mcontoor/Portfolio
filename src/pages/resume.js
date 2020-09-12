@@ -5,7 +5,12 @@ const Resume = () => {
     return (
         <Layout>
             <div className="container">
-                <h1>Resume</h1>
+                <section id="#skills">
+                    <h1>Tech Stack</h1>
+                </section>
+                <section id="#resume">
+                    <h1>Resume</h1>
+                </section>
             </div>
         </Layout>
     );
