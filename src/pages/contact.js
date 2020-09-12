@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
-import { navigate } from 'gatsby-link';
+import Success from '../assets/success.svg';
 
 function encode(data) {
     return Object.keys(data)
@@ -12,6 +12,7 @@ function encode(data) {
 
 const Contact = () => {
     const [state, setState] = React.useState({});
+    const [isFormSubmitted, setIsFormSubmitted] = React.useState(false);
 
     const handleChange = e => {
         setState({ ...state, [e.target.name]: e.target.value });
@@ -28,71 +29,99 @@ const Contact = () => {
                 ...state,
             }),
         })
-            .then(() => navigate(form.getAttribute('action')))
+            .then(() => setIsFormSubmitted(true))
             .catch(error => alert(error));
     };
     return (
         <Layout>
             <div className="container contact">
-                <h1>Have a question?</h1>
-                <p>
-                    You can write to me on{' '}
-                    <a href="mailto:mcontoor@gmail.com">
-                        <b>mcontoor@gmail.com</b>
-                    </a>{' '}
-                    or <br />
-                    Drop in a message below! <br />
-                </p>
-                <br />
-                <form
-                    name="contact"
-                    method="post"
-                    // action="/thanks/"
-                    data-netlify="true"
-                    data-netlify-honeypot="bot-field"
-                    onSubmit={handleSubmit}
-                >
-                    {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                    <input type="hidden" name="form-name" value="contact" />
-                    <p hidden>
-                        <label>
-                            Don’t fill this out:{' '}
-                            <input name="bot-field" onChange={handleChange} />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            Your name:
-                            <br />
+                {isFormSubmitted ? (
+                    <>
+                        <Success />
+                        <h3 className="contact-success">
+                            Thank you for reaching out to me! Expect a reply in
+                            the next 24 hours!
+                        </h3>
+                    </>
+                ) : (
+                    <>
+                        <h1>Contact</h1>
+                        <p className="contact-text">
+                            Feel free to reach me for any questions or
+                            opportunities you'd like to discuss. You can write
+                            to me on{' '}
+                            <a href="mailto:mcontoor@gmail.com">
+                                <b>mcontoor@gmail.com</b>
+                            </a>{' '}
+                            or Drop in a message below!
+                        </p>
+                        <br />
+                        <form
+                            name="contact"
+                            method="post"
+                            data-netlify="true"
+                            data-netlify-honeypot="bot-field"
+                            onSubmit={handleSubmit}
+                        >
+                            {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                             <input
-                                type="text"
-                                name="name"
-                                onChange={handleChange}
+                                type="hidden"
+                                name="form-name"
+                                value="contact"
                             />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            Your email:
-                            <br />
-                            <input
-                                type="email"
-                                name="email"
-                                onChange={handleChange}
-                            />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            Message:
-                            <br />
-                            <textarea name="message" onChange={handleChange} />
-                        </label>
-                    </p>
-                    <p>
-                        <button type="submit">Send</button>
-                    </p>
-                </form>
+                            <p hidden>
+                                <label>
+                                    Don’t fill this out:{' '}
+                                    <input
+                                        name="bot-field"
+                                        onChange={handleChange}
+                                    />
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Your name:
+                                    <br />
+                                    <input
+                                        className="form-input"
+                                        type="text"
+                                        name="name"
+                                        onChange={handleChange}
+                                        placeholder="Jane Doe"
+                                    />
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Your email:
+                                    <br />
+                                    <input
+                                        className="form-input"
+                                        type="email"
+                                        name="email"
+                                        onChange={handleChange}
+                                        placeholder="janedoe@mail.com"
+                                    />
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Message:
+                                    <br />
+                                    <textarea
+                                        className="form-message"
+                                        name="message"
+                                        onChange={handleChange}
+                                        placeholder="Write your message here!"
+                                    />
+                                </label>
+                            </p>
+                            <p>
+                                <button type="submit">Send</button>
+                            </p>
+                        </form>
+                    </>
+                )}
             </div>
         </Layout>
     );
