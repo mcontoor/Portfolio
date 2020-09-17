@@ -25,7 +25,7 @@ const IndexPage = () => {
                     />
                 </div>
                 <div>
-                    <h1>Meghna Contoor</h1>
+                    <h1 className="home-title">Meghna Contoor</h1>
                     <p className="home-title">FULL STACK DEVELOPER</p>
                     <p className="home-info">
                         Hi, I'm a full stack developer based in India. I mainly

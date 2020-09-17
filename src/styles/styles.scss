@@ -67,6 +67,7 @@ header {
     max-width: 1200px;
     min-height: calc(100vh - 9.5rem);
     padding: 0 1.0875rem 1.45rem;
+    overflow: scroll;
 }
 
 .profile-img-container {
@@ -80,14 +81,12 @@ header {
 }
 
 .home {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    bottom: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 50%;
 }
 
 .container {
@@ -960,7 +959,7 @@ pre tt:after {
     }
 
     .title {
-        margin-right: 45%;
+        visibility: hidden;
     }
 
     .header-items {
@@ -1036,6 +1035,7 @@ pre tt:after {
     }
 
     .home {
+        position: relative;
         display: flex;
         flex-direction: column;
         -ms-transform: translateY(0);
