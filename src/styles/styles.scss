@@ -926,6 +926,11 @@ pre tt:after {
         visibility: hidden;
     }
 
+    .profile-img-container {
+        min-height: 150px;
+        min-width: 150px;
+    }
+
     .menu-open {
         position: fixed;
         top: 0;

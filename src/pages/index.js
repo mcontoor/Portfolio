@@ -20,7 +20,9 @@ const IndexPage = () => {
         <Layout>
             <div className="container home">
                 <div className="profile-img-container">
-                    <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+                    <Img
+                        fluid={data.placeholderImage.childImageSharp.fluid}
+                    />
                 </div>
                 <div>
                     <h1>Meghna Contoor</h1>
