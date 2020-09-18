@@ -31,7 +31,7 @@ const Header = () => {
                         {options.map(option => (
                             <a className="nav-options" href={option.path}>
                                 {option.icon}{' '}
-                                <p style={{ margin: 0, paddingInlineStart: 5 }}>
+                                <p style={{ margin: 0, paddingInlineStart: 5, paddingTop: 10 }}>
                                     {option.name}
                                 </p>
                             </a>

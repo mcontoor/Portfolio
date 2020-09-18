@@ -7,14 +7,26 @@ const Resume = () => {
         <Layout>
             <div className="container">
                 <section id="resume">
-                    <h1>Resume</h1>
-                    <button>Download CV</button>
-                    <ul>
+                    <span>
+                        <h1>Resume</h1>
+                        <a
+                            className="btn"
+                            href={
+                                'https://drive.google.com/file/d/1bG_4CMHl44FqnKILDLB3ch04EU-5tQ6o/view?usp=sharing'
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Resume link"
+                        >
+                            Download PDF
+                        </a>
+                    </span>
+                    <ul className="list">
                         {resume.map(x => (
                             <>
-                                <li>{x.year}</li>
+                                <li className="year">{x.year}</li>
                                 {x.data.map(y => (
-                                    <div style={{ background: 'yellow' }}>
+                                    <div className="summary">
                                         <span>
                                             <h1>{y.name}</h1>
                                             <h2>{y.location}</h2>
