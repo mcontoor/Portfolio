@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import SEO from '../components/seo';
 import SocialIcons from './SocialIcons';
 import Header from './header';
-import '../styles/styles.scss';
+import '../styles/styles.css';
 
 const Layout = ({ children }) => {
     return (

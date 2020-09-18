@@ -35,7 +35,6 @@ module.exports = {
             },
         },
         `gatsby-plugin-use-dark-mode`,
-        `gatsby-plugin-sass`,
         {
             resolve: 'gatsby-plugin-react-svg',
             options: {
