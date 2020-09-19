@@ -1,8 +1,12 @@
+require('dotenv').config();
+
+const config = require('./config/site');
 module.exports = {
     siteMetadata: {
-        title: `Portfolio`,
-        description: `A website to showcase Meghna's profile as a Full Stack Developer`,
-        author: `@mcontoor`,
+        siteUrl: config.siteUrl,
+        title: config.title,
+        description: config.description,
+        author: config.author,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -36,11 +40,68 @@ module.exports = {
         },
         `gatsby-plugin-use-dark-mode`,
         {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    `gatsby-remark-emojis`, // <-- this line adds emoji
+                ],
+                options: {
+                    // Deactivate the plugin globally (default: true)
+                    active: true,
+                    // Add a custom css class
+                    class: 'emoji-icon',
+                    // In order to avoid pattern mismatch you can specify
+                    // an escape character which will be prepended to the
+                    // actual pattern (e.g. `#:poop:`).
+                    escapeCharacter: '#', // (default: '')
+                    // Select the size (available size: 16, 24, 32, 64)
+                    size: 64,
+                    // Add custom styles
+                    styles: {
+                        display: 'inline',
+                        margin: '0',
+                        'margin-top': '1px',
+                        position: 'relative',
+                        top: '5px',
+                        width: '25px',
+                    },
+                },
+            },
+        },
+        {
             resolve: 'gatsby-plugin-react-svg',
             options: {
                 rule: {
                     include: /assets/,
                 },
+            },
+        },
+        {
+            resolve: `gatsby-source-github-api`,
+            options: {
+                token: config.githubApiToken,
+                graphQLQuery: `
+                query { 
+                    viewer { 
+                      company
+                      status {
+                        id
+                        emoji
+                        message
+                      }
+                      followers {
+                        totalCount
+                      }
+                      following {
+                        totalCount
+                      }
+                      repositories {
+                        totalCount
+                      }
+                      location
+                    }
+                  }`,
+                variables: {},
             },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality

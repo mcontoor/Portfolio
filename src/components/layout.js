@@ -23,9 +23,7 @@ const Layout = ({ children }) => {
                     <div>
                         <SocialIcons />
                     </div>
-                    © {new Date().getFullYear()} - All rights reserved. Made
-                    with <span className="heart">❤</span> by{' '}
-                    <b>Meghna Contoor</b>
+                    © {new Date().getFullYear()} - All rights reserved.
                 </div>
             </footer>
         </>

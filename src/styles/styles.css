@@ -365,7 +365,16 @@ header {
     background-color: var(--bg-q-color);
     transition: 0.3s;
     border: 1px solid yellowgreen;
+}
 
+.bio {
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+    background-color: var(--bg-q-color);
+    transition: 0.3s;
 }
 
 .summary:nth-of-type(even) {
@@ -377,13 +386,14 @@ header {
 }
 
 .heading {
-    color: var(--text-primary-color);
+    color: red;
     font-weight: 700;
     font-size: 1.2em;
     text-align: left;
     margin-bottom: 10px;
 }
 .heading > p {
+    color: var(--text-primary-color);
     font-size: 1em;
     font-style: italic;
     float: right;
