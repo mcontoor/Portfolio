@@ -37,7 +37,7 @@ export const resume = [
                 summary: [
                     {
                         details: [
-                            'Completed a 12-week intensive web development bootcamp. Techonologies covered include HTML, CSS, ajax, JQuery, React | nodeJS, mySQL, mongoDB, postgreSQL, redis. Worked on multiple full stack projects with a focus on MERN stack. Individual, group and pair ptogramming.',
+                            'Completed a 12-week intensive web development bootcamp. Techonologies covered include HTML, CSS, ajax, JQuery, React | nodeJS, mySQL, mongoDB, postgreSQL, redis. Worked on multiple full stack projects with a focus on MERN stack. Individual, group and pair programming.',
                         ],
                     },
                 ],
@@ -56,7 +56,7 @@ export const resume = [
                 summary: [
                     {
                         project:
-                            'Research Assisstant to a glaciologist with the mission to explore the statistical properties of thermokarst sinks and attempting to understand their effect on a regional scale in the context of energy/mass balance. The work included',
+                            'Research Assistant to a glaciologist with the mission to explore the statistical properties of thermokarst sinks and attempting to understand their effect on a regional scale in the context of energy/mass balance. The work included',
                         details: [
                             'Automating of data extraction using image processing tools for bulk image analysis, integrating MATLAB and GDAL/OGR commands into shell scripts',
                             'Statistical analysis of data extracted from satellite images.',
