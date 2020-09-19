@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DarkModeToggle from './DarkModeToggle';
-import { Home, Archive, Clipboard, User } from 'react-feather';
+import { Home, Clipboard, User } from 'react-feather';
 
 const options = [
     { name: 'Home', path: '/', icon: <Home size={18} /> },
@@ -15,6 +15,11 @@ const Header = () => {
         <header
             style={{
                 marginBottom: `1.45rem`,
+                position: 'sticky',
+                width: '100%',
+                top: 0,
+                left: 0,
+                zIndex: 99,
             }}
         >
             <div className="header-items">
@@ -31,7 +36,13 @@ const Header = () => {
                         {options.map(option => (
                             <a className="nav-options" href={option.path}>
                                 {option.icon}{' '}
-                                <p style={{ margin: 0, paddingInlineStart: 5, paddingTop: 10 }}>
+                                <p
+                                    style={{
+                                        margin: 0,
+                                        paddingInlineStart: 5,
+                                        paddingTop: 10,
+                                    }}
+                                >
                                     {option.name}
                                 </p>
                             </a>
