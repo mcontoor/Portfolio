@@ -16,7 +16,7 @@ export const resume = [
                             'Implement the user interface to perfectly match designs using react native to create web, iOS and Android applications and adopted the latest and best react practices in the project.',
                             'Assist in creating robust web component library for the UI components using Storybook.',
                             'Build server-side micro services from scratch that is robust, functional, and scalable and build the UI as well.',
-                            'Write and maintain cloud formation templated and deploy AWS resources',
+                            'Write and maintain cloud formation templates and deploy AWS resources',
                             'Follow TDD approach to ensure > 90% code coverage',
                             'Identify development issues, brainstorm solutions, and constantly improve the solution via testing and feedback until the issue is resolved.',
                             'Participate in weekly team hackathons, and pair programming exercises.',
