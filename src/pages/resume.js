@@ -37,14 +37,13 @@ const Resume = () => {
                     <a
                         className="btn download"
                         href={
-                            'https://drive.google.com/file/d/1bG_4CMHl44FqnKILDLB3ch04EU-5tQ6o/view?usp=sharing'
+                            'https://drive.google.com/file/d/1vurokJadneFSPUhOsCtOgJat1ebwlLLb/view?usp=sharing'
                         }
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Resume link"
                     >
-                        Download PDF {' '}
-                        <Download size={18} />
+                        Download PDF <Download size={18} />
                     </a>
                 </span>
                 {showResume ? (
